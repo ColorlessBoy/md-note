@@ -108,9 +108,21 @@ $$
 where
 $$
 \pi(\tanh(\sigma_{\theta_\pi} \epsilon + \mu_{\theta_\pi}) \vert s; \theta_\pi) 
-= \frac{p(\sigma_{\theta_\pi} \epsilon + \mu_{\theta_\pi} \vert s; \theta_\pi) }{1 + \tanh^2(\sigma_{\theta_\pi} \epsilon + \mu_{\theta_\pi})}.
+= \frac{p(\sigma_{\theta_\pi} \epsilon + \mu_{\theta_\pi} \vert s; \theta_\pi) }{1 - \tanh^2(\sigma_{\theta_\pi} \epsilon + \mu_{\theta_\pi})}.
 $$
 
+$$
+\ln p(a \vert s) - \sum^D_{i=1}\ln (1 - a_i^2).
+$$
+
+We use $$a \approx \tanh a$$.
+$$
+\begin{align*}
+&2(\ln 2 - x - \ln(1 + e^{-2x}))\\
+=& 2\ln\left(\frac{2}{e^x + e^{-x}}\right)\\
+=& \ln \left\{1 - \tanh^2 x\right\}
+\end{align*}
+$$
 
 ## 1.3 Double Q-Net Objective
 

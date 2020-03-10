@@ -69,6 +69,20 @@ $$
 \nabla_{\theta_\pi} J_\mu(\theta_\pi) = \frac{1}{1-\gamma} \sum_s d_{\pi}(s) \sum_a \nabla_{\theta_\pi} \pi(a\vert s; \theta_\pi) Q(s, a; \theta_\pi)
 $$
 
+---
+
+Stationary distribution assumption is bad. So
+$$
+\nabla_{\theta_\pi} J(\theta_\pi) = p_0^T (I - \gamma P_{\theta_\pi})^{-1} G(\theta_\pi)
+$$
+We only can get samples following  $$p^T_0(I - \gamma P_\mu)^{-1}$$, we need get diagonal matrix $$R$$ that satisfies
+$$
+p^T_0(I - \gamma P_\mu)^{-1} R = p^T_0 (I - \gamma P_\pi)^{-1}
+$$
+
+
+
+
 ## Covariate Shift $$\nabla_\theta J_\pi(\theta)$$  Emphatic weightings $$\nabla_\theta J_\mu(\theta)$$
 
 > **Definition** (covariate operator)
